@@ -12,6 +12,15 @@ int main() {
 		cin >> name[i] >> loc[i];
 	}
 	//이름위치 고정화
+	for ( i = 0; i < MX; i++)
+	{
+		for (j = strlen(name[i]); j >= 0; --j) {
+			name[i][j+2] = name[i][j];
+		}
+		name[i][1] = name[i][2];
+		name[i][0] = '$';
+		name[i][2] = '$';
+	}
 	
 	//출력
 	//(IF(loc=0,name,"")&",")
