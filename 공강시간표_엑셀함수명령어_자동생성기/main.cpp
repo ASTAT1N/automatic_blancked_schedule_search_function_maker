@@ -2,8 +2,8 @@
 #include<string>
 using namespace std;
 int main() {
-	int MX, i;
-	char name[20][6], loc[20][6];
+	int MX, i,j;
+	char name[20][8], loc[20][6];
 	//입력
 	cout << "인원수를 입력해 주세요.";
 	cin >> MX;
@@ -11,9 +11,17 @@ int main() {
 	for (i = 0; i < MX; i++){
 		cin >> name[i] >> loc[i];
 	}
+	//이름위치 고정화
+	
 	//출력
 	//(IF(loc=0,name,"")&",")
 	cout << "=";
+	for (i = 0; i < MX; ++i) {
+		
+		if (i < (MX - 1)) {
+			cout << "&\"\,\")&";
+		}
+	}
 
 	return 0;
 }
