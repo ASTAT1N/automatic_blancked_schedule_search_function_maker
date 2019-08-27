@@ -13,7 +13,7 @@ public:
 			if (sw) {
 				loc[i + 1] %= 10;
 				loc[i] = _name[i] + 1;
-				if (loc[i + 1] < 10) {
+				if (loc[i] < 10) {
 					sw = false;
 				}
 			}
@@ -21,7 +21,13 @@ public:
 				loc[i] = _name[i];
 			}
 		}
-		loc[ms] = NULL;
+		if (sw) {
+			for (int i = ms; i > 1;--i) {
+				loc[i] = loc[i - 1];
+			}
+			loc[1] = '1';
+		}
+		loc[ms+sw] = NULL;
 		//이름위치 고정화
 		for (int i = ms; i > 0; --i) {
 			name[i + 2] = _name[i];
@@ -52,7 +58,7 @@ int main() {
 	for (i = 0; i < MX; i++) {
 		cin >> name;
 		con.push_back(name);
-		cout << con[i].get_name() << " " << con[i].get_loc() << "\n";
+		//cout << con[i].get_name() << " " << con[i].get_loc() << "\n";
 	}
 	//출력
 	//(IF(loc=0,name,"")&",")
@@ -60,7 +66,7 @@ int main() {
 	for (i = 0; i < MX; ++i) {
 		
 		if (i < (MX - 1)) {
-			cout << "&\"\,\")&";
+			cout << "&\",\")&";
 		}
 	}
 
