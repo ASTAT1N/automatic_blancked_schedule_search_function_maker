@@ -7,27 +7,29 @@ public:
 		int ms = strlen(_name);
 		//월요일 1교시 위치 찾기
 		loc[0] = _name[0] + 2;
+		bool sw = (mInt(&_name[ms - 1]) >= 8);
 		loc[ms - 1] = (_name[ms - 1] + 2);
-		bool sw = (loc[ms - 1] >= 10);
 		for (int i = ms - 2; i > 0; --i) {
 			if (sw) {
-				loc[i + 1] %= 10;
-				loc[i] = _name[i] + 1;
-				if (loc[i] < 10) {
+				loc[i + 1] -= 10;
+				if (mInt(&_name[i])!=9) {
 					sw = false;
 				}
+				loc[i] = _name[i] + 1;
+				
 			}
 			else {
 				loc[i] = _name[i];
 			}
 		}
 		if (sw) {
+			loc[1] -= 10;
 			for (int i = ms; i > 1;--i) {
 				loc[i] = loc[i - 1];
 			}
 			loc[1] = '1';
 		}
-		loc[ms+sw] = NULL;
+		loc[ms+((int)sw)] = NULL;
 		//이름위치 고정화
 		for (int i = ms; i > 0; --i) {
 			name[i + 2] = _name[i];
@@ -36,6 +38,9 @@ public:
 		name[0] = '$';
 		name[2] = '$';
 	}
+	int mInt(char*_mchar) {
+		return atoi(_mchar);
+	}
 	char* get_name() {
 		return name;
 	}
@@ -43,8 +48,8 @@ public:
 		return loc;
 	}
 private:
-	char name[8];
-	char loc[6];
+	char name[8]="";
+	char loc[6]="";
 };
 using namespace std;
 int main() {
@@ -62,11 +67,14 @@ int main() {
 	}
 	//출력
 	//(IF(loc=0,name,"")&",")
-	cout << "=";
-	for (i = 0; i < MX; ++i) {
-		
+	cout << "\n=(";
+	for (i = 0; i < con.size(); ++i) {
+		cout << "IF(" << con[i].get_loc() << "=0," << con[i].get_name() << "&\",\",\"\")";
 		if (i < (MX - 1)) {
-			cout << "&\",\")&";
+			cout << "&";
+		}
+		else {
+			cout << ")";
 		}
 	}
 
