@@ -1,5 +1,6 @@
 ﻿  main.cpp
-c:\coding\공강시간표_엑셀함수명령어_자동생성기\공강시간표_엑셀함수명령어_자동생성기\main.cpp(70): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\coding\공강시간표_엑셀함수명령어_자동생성기\공강시간표_엑셀함수명령어_자동생성기\main.cpp(72): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\coding\공강시간표_엑셀함수명령어_자동생성기\공강시간표_엑셀함수명령어_자동생성기\main.cpp(56): warning C4101: 'MX' :참조되지 않은 지역 변수입니다.
+c:\coding\공강시간표_엑셀함수명령어_자동생성기\공강시간표_엑셀함수명령어_자동생성기\main.cpp(100): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\coding\공강시간표_엑셀함수명령어_자동생성기\공강시간표_엑셀함수명령어_자동생성기\main.cpp(102): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\coding\공강시간표_엑셀함수명령어_자동생성기\공강시간표_엑셀함수명령어_자동생성기\main.cpp(111): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\coding\공강시간표_엑셀함수명령어_자동생성기\공강시간표_엑셀함수명령어_자동생성기\main.cpp(113): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   공강시간표_엑셀함수명령어_자동생성기.vcxproj -> C:\coding\공강시간표_엑셀함수명령어_자동생성기\Debug\공강시간표_엑셀함수명령어_자동생성기.exe
