@@ -87,7 +87,6 @@ int main() {
 	char name[6];
 	vector<class::data>con;
 	//입력
-	cout << "인원수를 입력해 주세요.";
 	cout << "이름의 좌표값을 입력해 주세요\n";
 	while(cin >> name) {
 		
