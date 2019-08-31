@@ -67,7 +67,7 @@ int main() {
 	}
 	//출력
 	//(IF(loc=0,name,"")&",")
-	cout << "\n=(";
+	cout << "\n시간표: =(";
 	for (i = 0; i < con.size(); ++i) {
 		cout << "IF(" << con[i].get_loc() << "=0," << con[i].get_name() << "&\",\",\"\")";
 		if (i < (con.size() - 1)) {
@@ -77,6 +77,7 @@ int main() {
 			cout << ")";
 		}
 	}
+	cout << "\n공강확인: =(";
 
 	return 0;
 }
