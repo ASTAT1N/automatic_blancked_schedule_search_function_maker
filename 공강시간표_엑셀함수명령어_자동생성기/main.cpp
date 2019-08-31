@@ -6,9 +6,10 @@ public:
 	data(char _name[6]){
 		int ms = strlen(_name);
 		//월요일 1교시 위치 찾기
+		int addMon = 3;
 		loc[0] = _name[0] + 2;
-		bool sw = (mInt(&_name[ms - 1]) >= 8);
-		loc[ms - 1] = (_name[ms - 1] + 2);
+		bool sw = ((mInt(&_name[ms - 1])+3) >= 10);
+		loc[ms - 1] = (_name[ms - 1] + 3);
 		for (int i = ms - 2; i > 0; --i) {
 			if (sw) {
 				loc[i + 1] -= 10;
@@ -58,10 +59,9 @@ int main() {
 	vector<class::data>con;
 	//입력
 	cout << "인원수를 입력해 주세요.";
-	cin >> MX;
 	cout << "이름의 좌표값을 입력해 주세요\n";
-	for (i = 0; i < MX; i++) {
-		cin >> name;
+	while(cin >> name) {
+		
 		con.push_back(name);
 		//cout << con[i].get_name() << " " << con[i].get_loc() << "\n";
 	}
@@ -70,7 +70,7 @@ int main() {
 	cout << "\n=(";
 	for (i = 0; i < con.size(); ++i) {
 		cout << "IF(" << con[i].get_loc() << "=0," << con[i].get_name() << "&\",\",\"\")";
-		if (i < (MX - 1)) {
+		if (i < (con.size() - 1)) {
 			cout << "&";
 		}
 		else {
